@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get install -y update
 RUN apt-get install -y apache2
-RUN apt-get inystall -y mysql-server
+RUN apt-get install -y mysql-server
 RUN apt-get install -y php
 
 RUN service apache2 start && service mysql start
