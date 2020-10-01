@@ -1,0 +1,12 @@
+FROM ubuntu
+Maintainer Baboolal
+
+
+RUN apt-get install -y update
+RUN apt-get install -y apache2
+RUN apt-get inystall -y mysql-server
+RUN apt-get install -y php
+RUN service apache2 start && service mysql start
+RUN touch "<?php echo "Hello World!"; ?>" > helloworld.php
+RUN apt-get install -y w3m
+CMD ["w3m","http://172.17.0.2/helloworld.php"]
